@@ -33,7 +33,8 @@
 
     try {
  $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "L@gin210584"); $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); } catch(Exception $e) {
- catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e));   }
+ echo "Failed: " . $e;
+ }
 
     if (isset($_POST['submit'])) {
         try {
@@ -42,7 +43,7 @@
             $job = $_POST['job'];
             $date = date("Y-m-d");
             // Insert data
-            $sql_insert = "INSERT INTO dicodingdb.Registration (name, email, job, date) 
+            $sql_insert = "INSERT INTO Registration (name, email, job, date) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
@@ -68,17 +69,18 @@
                 echo "<th>Job</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
-                    echo "<tr><td>".$registrant['name']."</td>";
+ echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
-                    echo "<td>".$registrant['date']."</td></tr>";
+ echo "<td>".$registrant['date']."</td></tr>";
                 }
                 echo "</table>";
             } else {
                 echo "<h3>No one is currently registered.</h3>";
             }
-        } catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e)); }
-    }
+        } catch(Exception $e) {
+ echo "Failed: " . $e;
+ } }
  ?>
  </body>
  </html>
