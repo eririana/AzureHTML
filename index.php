@@ -26,8 +26,8 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<tcp:dicodingserverapp.database.windows.net,1433>";
-    $user = "<eririana@dicodingserverapp>";
+    $host = "<dicodingserverapp.database.windows>";
+    $user = "<eririana>";
     $pass = "<login210584>";
     $db = "<dicodingdb>";
 
