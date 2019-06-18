@@ -26,15 +26,14 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<dicodingserverapp.database.windows.net>";
+    $host = "<dicodingserverapp>";
     $user = "<eririana>";
     $pass = "<L@gin210584>";
     $db = "<dicodingdb>";
 
     try {
  $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "L@gin210584"); $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+ catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e));   }
 
     if (isset($_POST['submit'])) {
         try {
