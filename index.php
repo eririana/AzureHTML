@@ -28,7 +28,7 @@
  <?php
     $host = "<dicodingserverapp.database.windows.net>";
     $user = "<eririana>";
-    $pass = "<login210584>";
+    $pass = "<L@gin210584>";
     $db = "<dicodingdb>";
 
     try {
