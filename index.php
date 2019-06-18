@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<tcp:dicodingserverapp.database.windows.net,1433>";
+    $host = "<dicodingserverapp.database.windows.net>";
     $user = "<eririana>";
     $pass = "<L@gin210584>";
     $db = "<dicodingdb>";
@@ -77,9 +77,7 @@
             } else {
                 echo "<h3>No one is currently registered.</h3>";
             }
-        } catch(Exception $e) {
-            echo "Failed: " . $e;
-        }
+        } catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e)); }
     }
  ?>
  </body>
