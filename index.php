@@ -32,7 +32,7 @@
     $db = "<dicodingdb>";
 
     try {
- $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "{your_password_here}"); $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); } catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e)); }   if (isset($_POST['submit'])) {
+ $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "{login210584}"); $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); } catch (PDOException $e) { print("Error connecting to SQL Server."); die(print_r($e)); }   if (isset($_POST['submit'])) {
         try {
             $name = $_POST['name'];
             $email = $_POST['email'];
