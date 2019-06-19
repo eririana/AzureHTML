@@ -29,12 +29,14 @@
     $host = "<dicodingserverapp.database.windows.net>";
     $user = "<eririana>";
     $pass = "<L@gin210584>";
-    $db = "<dicodingdb>";
+    $db = "<dicoding>";
 
     try {
- $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "L@gin210584"); $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); } catch(Exception $e) {
- echo "Failed: " . $e;
- }
+        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    } catch(Exception $e) {
+        echo "Failed: " . $e;
+    }
 
     if (isset($_POST['submit'])) {
         try {
@@ -69,18 +71,19 @@
                 echo "<th>Job</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
- echo "<tr><td>".$registrant['name']."</td>";
+                    echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
- echo "<td>".$registrant['date']."</td></tr>";
+                    echo "<td>".$registrant['date']."</td></tr>";
                 }
                 echo "</table>";
             } else {
                 echo "<h3>No one is currently registered.</h3>";
             }
         } catch(Exception $e) {
- echo "Failed: " . $e;
- } }
+            echo "Failed: " . $e;
+        }
+    }
  ?>
  </body>
  </html>
