@@ -29,7 +29,7 @@
     $host = "<dicodingserverapp.database.windows.net>";
     $user = "<eririana>";
     $pass = "<L@gin210584>";
-    $db = "<dicoding>";
+    $db = "<dicodingdb>";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
