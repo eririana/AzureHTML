@@ -31,7 +31,7 @@
     $pass = "L@gin210584";
     $db = "dicodingdb";
     try {
-        $conn = new PDO("sqlsrv:server = $host; dicodingdb = $db", $user, $pass);
+        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(Exception $e) {
         echo "Failed: " . $e;
@@ -43,7 +43,7 @@
             $job = $_POST['job'];
             $date = date("Y-m-d");
             // Insert data
-            $sql_insert = "INSERT INTO registration (id, name, email, job, date) 
+            $sql_insert = "INSERT INTO registration (name, email, job, date) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
