@@ -26,15 +26,15 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    //$serverName = "dicodingserverapp.database.windows.net";
-    //$user = "eririana";
-    //$pass = "L@gin210584";
-    //$db = "dicodingdb";
+    $serverName = "dicodingserverapp.database.windows.net";
+    $user = "eririana";
+    $pass = "L@gin210584";
+    $db = "dicodingdb";
     try {
-        $conn = new PDO("sqlsrv:server = tcp:dicodingserverapp.database.windows.net,1433; Database = dicodingdb", "eririana", "L@gin210584");
+        $conn = new PDO("sqlsrv:server = $serverName; Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(Exception $e) {
-        echo "Failed: " . $e;
+        die (var_dump($e));
     }
     if (isset($_POST['submit'])) {
         try {
@@ -52,7 +52,7 @@
             $stmt->bindValue(4, $date);
             $stmt->execute();
         } catch(Exception $e) {
-            echo "Failed: " . $e;
+            die (var_dump($e));
         }
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
@@ -78,7 +78,7 @@
                 echo "<h3>No one is currently registered.</h3>";
             }
         } catch(Exception $e) {
-            echo "Failed: " . $e;
+            die (var_dump($e));
         }
     }
  ?>
