@@ -33,7 +33,8 @@
     try {
         $conn = new PDO("sqlsrv:server = $serverName; Database = $db", $user, $pass);
 		$connectionInfo = array("user" => "eririana@dicodingserverapp", "pass" => "L@gin210584", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $conn = sqlsrv_connect( $serverName, $connectionInfo);
+		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(PDOException $e) {
         die("Failed: " . $e->getMessage());
     }
