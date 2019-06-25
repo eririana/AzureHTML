@@ -27,12 +27,12 @@
  </form>
  <?php
     $serverName = "tcp:dicodingserverapp.database.windows.net,1433";
-    $user = "eririana@dicodingserverapp";
+    $user = "eririana";
     $pass = "L@gin210584";
     $db = "dicodingdb";
     try {
         $conn = new PDO("sqlsrv:server = $serverName; Database = $db", $user, $pass);
-		$connectionInfo = array("user" => "eririana@dicodingserverapp", "pass" => "L@gin210584", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+		$connectionInfo = array("user" => "eririana", "pass" => "L@gin210584", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
         $conn = sqlsrv_connect( $serverName, $connectionInfo);
 		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(PDOException $e) {
