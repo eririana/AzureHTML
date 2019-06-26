@@ -27,7 +27,7 @@
  </form>
  <?php
     $serverName = "eririanadicoding.database.windows.net,1433";
-    $user = "eririana";
+    $user = "eririana@eririanadicoding";
     $pass = "L@gin210584";
     $db = "dicodingdb";
     try {
