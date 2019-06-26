@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $serverName = "tcp:eririanadicoding.database.windows.net,1433";
+    $serverName = "eririanadicoding.database.windows.net,1433";
     $user = "eririana";
     $pass = "L@gin210584";
     $db = "dicodingdb";
