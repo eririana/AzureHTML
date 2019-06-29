@@ -41,7 +41,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=eririanadicoding".getenv('ACCOUNT_NAME').";AccountKey=/e6OVJPaBxUHp3BIW9Srt9GEdePb6Segt+SiZoOIVm4T0i7gtWVsg0SH3PsiJsbr2v4inAAIAG03lMrWwjCN/w==".getenv('ACCOUNT_KEY');
+$connectionString = "DefaultEndpointsProtocol=https;AccountName="eririanadicoding";AccountKey="/e6OVJPaBxUHp3BIW9Srt9GEdePb6Segt+SiZoOIVm4T0i7gtWVsg0SH3PsiJsbr2v4inAAIAG03lMrWwjCN/w==;
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
@@ -138,9 +138,9 @@ else
     try{
         // Delete container.
         echo "Deleting Container".PHP_EOL;
-        echo $_GET["containerName"].PHP_EOL;
+        echo $_GET["containereririana"].PHP_EOL;
         echo "<br />";
-        $blobClient->deleteContainer($_GET["containerName"]);
+        $blobClient->deleteContainer($_GET["containereririana"]);
     }
     catch(ServiceException $e){
         // Handle exception based on error codes and messages.
