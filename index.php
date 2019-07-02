@@ -24,7 +24,7 @@
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/Analyze";
+            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
  
         // Request parameters.
         var params = {
@@ -39,13 +39,13 @@
  
         // Make the REST API call.
         $.ajax({
-            url: uriBase + "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/Analyze" + $.param(params),
+            url: uriBase + "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze" + $.param(params),
  
             // Request headers.
             beforeSend: function(xhrObj){
                 xhrObj.setRequestHeader("Content-Type","application/json");
                 xhrObj.setRequestHeader(
-                    "Ocp-Apim-Subscription-Key", 9ee97ebbdbd3431f9718d6f70544ee18);
+                    "Ocp-Apim-Subscription-Key", subscriptionKey);
             },
  
             type: "POST",
