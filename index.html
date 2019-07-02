@@ -24,7 +24,7 @@
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/";
+            "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
  
         // Request parameters.
         var params = {
@@ -39,7 +39,7 @@
  
         // Make the REST API call.
         $.ajax({
-            url: uriBase + "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/" + $.param(params),
+            url: uriBase + "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze" + $.param(params),
  
             // Request headers.
             beforeSend: function(xhrObj){
