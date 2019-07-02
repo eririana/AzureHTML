@@ -24,11 +24,11 @@
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
+            "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/";
  
         // Request parameters.
         var params = {
-            "visualFeatures": "Categories,Description,Color",
+            "visualFeatures": "Categories,Description",
             "details": "",
             "language": "en",
         };
@@ -39,7 +39,7 @@
  
         // Make the REST API call.
         $.ajax({
-            url: uriBase + "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze" + $.param(params),
+            url: uriBase + "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/" + $.param(params),
  
             // Request headers.
             beforeSend: function(xhrObj){
