@@ -24,7 +24,7 @@
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            "https://southeastasia.api.cognitive.microsoft.com";
+            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/Analyze";
  
         // Request parameters.
         var params = {
@@ -39,7 +39,7 @@
  
         // Make the REST API call.
         $.ajax({
-            url: uriBase + "?" + $.param(params),
+            url: uriBase + "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/Analyze" + $.param(params),
  
             // Request headers.
             beforeSend: function(xhrObj){
