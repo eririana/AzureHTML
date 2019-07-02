@@ -24,7 +24,7 @@
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase = 
-            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
+            "http://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
 		
  
         // Request parameters.
@@ -40,7 +40,7 @@
  
         // Make the REST API call.
         $.ajax({
-            url: uriBase + "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze" + $.param(params),
+            url: uriBase + "http://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze" + $.param(params),
  
             // Request headers.
             beforeSend: function(xhrObj){
@@ -76,7 +76,7 @@ Enter the URL to an image, then click the <strong>Analyze image</strong> button.
 <br><br>
 Image to analyze:
 <input type="text" name="inputImage" id="inputImage"
-    value="https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg"/>
+    value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg"/>
 <button onclick="processImage()">Analyze image</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
